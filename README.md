@@ -40,6 +40,8 @@ https://web.archive.org/web/20100527145310/http://snowdog.larc.nasa.gov/cgi-bin/
 
 One of the files simple.f90 was modified, and is named simpleMODIS.f90 and can be found in this respository. 
 
+---
+
 ## The Pipeline
 
 The first step is to download the data and model above. Then modify the Fu-Liou code with simpleMODIS.f90.
@@ -50,8 +52,10 @@ The Fu Liou code generates several result files which contain the geographic and
 
 The additional IDL programs plot the geographic distribution as a function of month. 
 
+---
+
 ## Citation
 
 If you use this repository, please cite the original paper:
-<to-be-inserted-after-publication>
+to-be-inserted-after-publication
 

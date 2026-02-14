@@ -1,5 +1,5 @@
 # crf-radiative-forcing-pipeline
-The data reduction pipeline for the paper Cloud Radiative Response to Galactic Cosmic Ray Variability by Svensmark and Shaviv
+The data reduction pipeline for the paper "Cloud Radiative Response to Galactic Cosmic Ray Variability" by Svensmark and Shaviv.
 
 ---
 
@@ -21,6 +21,8 @@ They can be obtained from:
 
 NASA LAADS DAAC  
 https://ladsweb.modaps.eosdis.nasa.gov/
+
+A list of the files downloaded can be found in "List_of_MODISMONTHLYFILES.png".
 
 ---
 

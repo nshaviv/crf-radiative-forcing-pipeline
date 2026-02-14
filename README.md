@@ -19,100 +19,39 @@ Due to file size constraints, the MODIS datasets are **not included** in this re
 
 They can be obtained from:
 
-NASA LAADS DAAC  
-https://ladsweb.modaps.eosdis.nasa.gov/
+NASA MODIS Data:  
+https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/61/MOD08_M3/
 
-A list of the files downloaded can be found in "List_of_MODISMONTHLYFILES.png".
+A list of the files downloaded can be found in "List-of-MODIS-files.txt".
 
----
+The analysis of the MODIS data with the Fu Liou model is then compared with the CERES data, which can be downloaded from:
 
-## Program Components
+CERES DATA:
+https://ceres-tool.larc.nasa.gov/ord-tool/jsp/SYN1degEd41Selection.jsp
 
-### 1. Parameter Extraction
-
-This program reads MODIS monthly datasets and extracts the variables required by the radiative transfer model.
-
-It performs:
-
-- Data selection and filtering
-- Unit conversion
-- Reformatting into model input format
-
-**Output:** Model-ready parameter files.
+A list of the files downloaded can be found in "List-of-CERES-files.txt".
 
 ---
 
-### 2. Radiative Transfer Calculations
+## Additional Code Requirement
 
-Radiative fluxes are computed using the **Fu–Liou radiative transfer model**.
+The Fu-Liou model can be downloaded from:
+https://web.archive.org/web/20100527145310/http://snowdog.larc.nasa.gov/cgi-bin/rose/flp200503/flp200503.cgi
 
-This step:
+One of the files simple.f90 was modified, and is named simpleMODIS.f90 and can be found in this respository. 
 
-- Ingests extracted atmospheric parameters
-- Allows modification of greenhouse gas concentrations
-- Computes upward and downward radiative fluxes
+## The Pipeline
 
-**Output includes:**
+The first step is to download the data and model above. Then modify the Fu-Liou code with simpleMODIS.f90.
 
-- TOA shortwave and longwave fluxes
-- Net radiative forcing
+The next step is to run the IDL program: Extract_Modis_Parameters.pro which produces several files that the Fu Liou code then reads. 
 
-The model can be downloaded from:
-http://insert.link
+The Fu Liou code generates several result files which contain the geographic and monthly dependence of the forcing, normalized to several galactic cosmic ray reductions.
 
----
-
-### 3. Output Processing
-
-Scripts compute:
-
-- Net TOA forcing fields
-- Temporal averages
-- Diagnostic radiative quantities
-
----
-
-### 4. Plotting
-
-Plotting scripts reproduce the figures presented in the paper, including:
-
-- Global forcing maps
-- Time-series analysis
-- Regional forcing comparisons
-
----
-
-## Requirements
-
-The code requires:
-
-- IDL 
-- Fu–Liou radiative transfer model installation
-  
----
-
-## Reproducibility Instructions
-
-To reproduce the results:
-
-1. Download the required MODIS monthly datasets.
-2. Run the parameter extraction program.
-3. Execute the radiative transfer model.
-4. Process output files to compute net TOA forcing.
-5. Run plotting scripts to generate figures.
-
----
-
-## Data Availability
-
-MODIS datasets are publicly available from NASA archives:
-
-https://ladsweb.modaps.eosdis.nasa.gov/
-
----
+The additional IDL programs plot the geographic distribution as a function of month. 
 
 ## Citation
 
 If you use this repository, please cite the original paper:
-ZZZ
+<to-be-inserted-after-publication>
 
